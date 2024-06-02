@@ -1,6 +1,5 @@
 Aufgabe 1:
-Für Aufgabe 1 habe ich Python benutzt. Den Code habe ich mit Hilfe des Microsoft Copiloten erstellt. Der erstellte Plot ist 'Spektrogramm.png'. Mein Computer schaffte es Block-Size: 1024 und Shift: 1 zu berechnen.
-Für 2048 fehlte der nötige Speicherplatz.
+Für Aufgabe 1 habe ich Python benutzt. Den Code habe ich mit Hilfe des Microsoft Copiloten erstellt. Der erstellte Plot ist 'Spektrogramm.png'. Mein Computer schaffte es Block-Size: 1024 und Shift: 1 zu berechnen, für 2048 fehlte der nötige Speicherplatz. Das genutzte Verfahren war FFT.
 
 Aufgabe 2:
 Die Analyse des Speicherbedarfs erfolgt mit dem Python-Modul tracemalloc. Mit diesem Modul teste ich, während die FFT läuft, wie viel Speicherplatz genutzt wird.
@@ -16,5 +15,8 @@ Als Varianten habe ich mich für folgende 3 Varianten entschieden:
 
 Dementsprechend habe ich keine (größeren) Veränderungen am Code vorgenommen. Aufgrund des Unterschiedlichen verfügbaren RAM musste ich jedoch die Dauer der Analysierten Datei Schrittweise von unbegrenzt auf 60 sek. bzw. 30 sek. senken.
 Die Senkung musste leider erfolgen, erst bei einer Begrenzung auf eine Minuter der Laptop in der Lage war, den Python Code erfolgreich auszuführen und der Raspberry PI, trotz gleichem RAM, erst bei der Senkung auf 30 Sekunden. Zuvor wurde der Prozess ansonsten auf beiden Maschienen irgendwann 'gekilled'.
+30 Sekunden:
 Laut dem genutzten Python Modul Tracemalloc ist der genutzte Speicher für die Funktionen nahezu identisch. Bei Betrachtung des genutzten Speicherplatzes von Python im Taskmanager erhält man jedoch sehr unterschiedliche Ergebnisse, die erklären könnten, weshalb der Code zuvor gekilled wurde.
 Auf dem Desktop PC habe ich laut Taskmanager einen Speicherverbrauch von 5 GB gehabt. Einen ähnlichen Speicherverbrauch ergab sich beim Laptop mit 4,2 GB. Der Raspberry PI benötigte jedoch auf der Spitze 7,2 GB Speicherplatz.
+60 Sekunden:
+4,6 GB maximal genutzt beim Laptop, jedoch kam es danach zu ausfällen von Windows und Taskmanager, wodurch eine genauere Angabe nicht möglich ist. Die Dauer des Programms war 13 min.
