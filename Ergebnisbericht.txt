@@ -10,8 +10,11 @@ Aufgabe 3:
 Als Varianten habe ich mich für folgende 3 Varianten entschieden:
     1) Windows 11, Desktop PC, 32 GB RAM: 
 
-    2) Windows 10, Laptop, GB RAM:
+    2) Windows 10, Laptop, 8 GB RAM:
 
     3) Linux, Raspberry PI 5, 8 GB RAM: 
 
-Dementsprechend habe ich keine (größeren) Veränderungen am Code vorgenommen. Aufgrund des Unterschiedlichen verfügbaren RAM musste ich jedoch die Dauer der Analysierten Datei Schrittweise senken.
+Dementsprechend habe ich keine (größeren) Veränderungen am Code vorgenommen. Aufgrund des Unterschiedlichen verfügbaren RAM musste ich jedoch die Dauer der Analysierten Datei Schrittweise von unbegrenzt auf 60 sek. bzw. 30 sek. senken.
+Die Senkung musste leider erfolgen, erst bei einer Begrenzung auf eine Minuter der Laptop in der Lage war, den Python Code erfolgreich auszuführen und der Raspberry PI, trotz gleichem RAM, erst bei der Senkung auf 30 Sekunden. Zuvor wurde der Prozess ansonsten auf beiden Maschienen irgendwann 'gekilled'.
+Laut dem genutzten Python Modul Tracemalloc ist der genutzte Speicher für die Funktionen nahezu identisch. Bei Betrachtung des genutzten Speicherplatzes von Python im Taskmanager erhält man jedoch sehr unterschiedliche Ergebnisse, die erklären könnten, weshalb der Code zuvor gekilled wurde.
+Auf dem Desktop PC habe ich laut Taskmanager einen Speicherverbrauch von 5 GB gehabt. Einen ähnlichen Speicherverbrauch ergab sich beim Laptop mit 4,2 GB. Der Raspberry PI benötigte jedoch auf der Spitze 7,2 GB Speicherplatz.
