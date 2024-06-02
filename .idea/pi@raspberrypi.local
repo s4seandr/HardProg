@@ -57,7 +57,7 @@ plt.ylabel('Frequenz [Hz]')
 plt.xlabel('Zeit [s]')
 plt.colorbar(label='Log-Amplitude')
 plt.xticks(np.arange(0, 61, 10))
-plt.savefig('spektrogramm_win_PC_30_sec.png')  # Speichern des Spektrogramms als PNG
+plt.savefig('spektrogramm_win_PC_60_sec.png')  # Speichern des Spektrogramms als PNG
 
 # Erstellen des Graphen für die Speichernutzung in MB
 plt.figure(figsize=(10, 5))
@@ -70,4 +70,4 @@ plt.figtext(0.3, 0.01, f'Maximaler Speicher: {max_speicher:.2f} MB', ha='center'
 gesamtdauer = zeit_in_sekunden[-1]
 plt.figtext(0.7, 0.01, f'Gesamtdauer: {gesamtdauer:.2f} s', ha='center')
 plt.xticks(np.arange(0, gesamtdauer, 10))
-plt.savefig('speichernutzung_win_pc_30_sec.png')  # Speichern der Speichernutzung als PNG
+plt.savefig('speichernutzung_win_pc_60_sec.png')  # Speichern der Speichernutzung als PNG
