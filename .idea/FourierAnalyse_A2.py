@@ -10,6 +10,9 @@ tracemalloc.start()
 # WAV-Datei einlesen
 sample_rate, data = wavfile.read('nicht_zu_laut_abspielen.wav')
 
+# Nur die ersten 60 Sekunden des Signals analysieren
+data = data[:sample_rate * 60]
+
 # Blockgröße und Verschiebung festlegen
 block_size = 256  # Beispielwert, Sie können die Blockgröße anpassen
 shift = 1  # Verschiebung um 1 Sample
@@ -44,7 +47,7 @@ spectra = np.array(spectra)
 zeit_in_sekunden = (np.arange(spectra.shape[0]) * shift) / sample_rate
 
 # Zeitachse für den Spektrogramm-Plot anpassen
-zeitachse_spektrogramm = np.linspace(0, len(data[:, 0]) / sample_rate, spectra.shape[0])
+zeitachse_spektrogramm = np.linspace(0, 60, spectra.shape[0])
 
 # Plot des Spektrogramms
 plt.figure(figsize=(10, 5))
@@ -53,8 +56,8 @@ plt.title('Spektrogramm')
 plt.ylabel('Frequenz [Hz]')
 plt.xlabel('Zeit [s]')
 plt.colorbar(label='Log-Amplitude')
-plt.xticks(np.arange(0, len(data[:, 0]) / sample_rate, 10))
-plt.savefig('spektrogramm_win_PC.png')  # Speichern des Spektrogramms als PNG
+plt.xticks(np.arange(0, 61, 10))
+plt.savefig('spektrogramm_win_PC_60_sec.png')  # Speichern des Spektrogramms als PNG
 
 # Erstellen des Graphen für die Speichernutzung in MB
 plt.figure(figsize=(10, 5))
@@ -67,4 +70,4 @@ plt.figtext(0.3, 0.01, f'Maximaler Speicher: {max_speicher:.2f} MB', ha='center'
 gesamtdauer = zeit_in_sekunden[-1]
 plt.figtext(0.7, 0.01, f'Gesamtdauer: {gesamtdauer:.2f} s', ha='center')
 plt.xticks(np.arange(0, gesamtdauer, 10))
-plt.savefig('speichernutzung_win_PC.png')  # Speichern der Speichernutzung als PNG
+plt.savefig('speichernutzung_win_pc_60_sec.png')  # Speichern der Speichernutzung als PNG
