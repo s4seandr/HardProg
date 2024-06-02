@@ -20,3 +20,4 @@ Laut dem genutzten Python Modul Tracemalloc ist der genutzte Speicher für die F
 Auf dem Desktop PC habe ich laut Taskmanager einen Speicherverbrauch von 5 GB gehabt. Einen ähnlichen Speicherverbrauch ergab sich beim Laptop mit 4,2 GB. Der Raspberry PI benötigte jedoch auf der Spitze 7,2 GB Speicherplatz.
 60 Sekunden:
 4,6 GB maximal genutzt beim Laptop, jedoch kam es danach zu ausfällen von Windows und Taskmanager, wodurch eine genauere Angabe nicht möglich ist. Die Dauer des Programms war 13 min.
+Auf dem Desktop PC dauerte das Programm bei einer Minute nur 2 Minuten, wobei der benötigte Speicherplatz bei 10,8 GB seinen Höhepunkt hatte.
