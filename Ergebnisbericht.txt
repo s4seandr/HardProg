@@ -1,0 +1,17 @@
+Aufgabe 1:
+Für Aufgabe 1 habe ich Python benutzt. Den Code habe ich mit Hilfe des Microsoft Copiloten erstellt. Der erstellte Plot ist 'Spektrogramm.png'. Mein Computer schaffte es Block-Size: 1024 und Shift: 1 zu berechnen.
+Für 2048 fehlte der nötige Speicherplatz.
+
+Aufgabe 2:
+Die Analyse des Speicherbedarfs erfolgt mit dem Python-Modul tracemalloc. Mit diesem Modul teste ich, während die FFT läuft, wie viel Speicherplatz genutzt wird.
+Der Speicherplatz wird analog zum Spektrogramm in einem Plot ausgegeben.
+
+Aufgabe 3:
+Als Varianten habe ich mich für folgende 3 Varianten entschieden:
+    1) Windows 11, Desktop PC, 32 GB RAM: 
+
+    2) Windows 10, Laptop, GB RAM:
+
+    3) Linux, Raspberry PI 5, 8 GB RAM: 
+
+Dementsprechend habe ich keine (größeren) Veränderungen am Code vorgenommen. Aufgrund des Unterschiedlichen verfügbaren RAM musste ich jedoch die Dauer der Analysierten Datei Schrittweise senken.
